@@ -1,0 +1,16 @@
+// ball material definition
+material ball
+  { 
+    // define one technique for rendering the Ball
+   technique
+    {
+      // render the Ball in one pass
+      pass
+       {
+          // color the Ball violet
+          ambient 0.58 0 0.827
+          diffuse 0.58 0 0.827
+          specular 0.58 0 0.827 120
+       }
+   }
+ }

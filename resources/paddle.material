@@ -1,0 +1,16 @@
+//paddle material definition
+material paddle
+ {
+   // define one technique for rendering a Paddle
+   technique 
+    {
+      // render a Paddle in one pass
+      pass
+       {
+         // color the Paddle dark orange
+         ambient 1 0.549 0
+         diffuse 1 0.549 0
+         specular 1 0.549 0 120
+       }
+    }
+ }
