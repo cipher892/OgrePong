@@ -50,8 +50,7 @@ Pong::Pong()
    viewportPtr->setBackgroundColour(ColourValue(0, 0, 0));
 
    // set the Camera's aspect ratio
-   cameraPtr->setAspectRatio(Real(viewportPtr->getActualWidth()) /
-      (viewportPtr->getActualHeight()));
+   cameraPtr->setAspectRatio(Real(viewportPtr->getActualWidth()) / (viewportPtr->getActualHeight()));
 
    // set the scene's ambient light
    sceneManagerPtr->setAmbientLight(ColourValue(0.75, 0.75, 0.75));
@@ -106,49 +105,47 @@ Pong::~Pong()
 void Pong::createScene()
  {
     // get a pointer to the Score Overlay
-	  Overlay *scoreOverlayPtr = OverlayManager::getSingleton().getByName("Score");
-    scoreOverlayPtr->show(); // show the Overlay
+	Overlay *scoreOverlayPtr = OverlayManager::getSingleton().getByName("Score");
+  scoreOverlayPtr->show(); // show the Overlay
 
    // make the game objects
    ballPtr = new Ball(sceneManagerPtr); // make the Ball
    ballPtr->addToScene(); // add the Ball to the scene
+   
    rightPaddlePtr = new Paddle(sceneManagerPtr, "RightPaddle", 90);
    rightPaddlePtr->addToScene(); // add a Paddle to the scene
    leftPaddlePtr = new Paddle(sceneManagerPtr, "LeftPaddle", -90);
    leftPaddlePtr->addToScene(); // add a Paddle to the scene
 
    // create the walls
-   Entity *entityPtr = sceneManagerPtr->
-   createEntity("WallLeft", "cube.mesh"); // create the left wall
+   Entity *entityPtr = sceneManagerPtr->createEntity("WallLeft", "cube.mesh"); // create the left wall
    entityPtr->setMaterialName("wall"); // set material for left wall
    // create the SceneNode for the left wall
    SceneNode *nodePtr = sceneManagerPtr->getRootSceneNode()->createChildSceneNode("WallLeft");
    nodePtr->attachObject(entityPtr); // attach left wall to SceneNode
    nodePtr->setPosition(-95, 0, 0); // set the left wall's position
    nodePtr->setScale(.05, 1.45, .1); // set the left wall's size
+
    entityPtr = sceneManagerPtr->createEntity("WallRight", "cube.mesh");
    entityPtr->setMaterialName("wall"); // set material for right wall
-
    // create the SceneNode for the right wall
    nodePtr = sceneManagerPtr->getRootSceneNode()->createChildSceneNode("WallRight");
    nodePtr->attachObject(entityPtr); // attach right wall to SceneNode
    nodePtr->setPosition(95, 0, 0); // set the right wall's position
    nodePtr->setScale(.05, 1.45, .1); // set the right wall's size
+
    entityPtr = sceneManagerPtr->createEntity("WallBottom", "cube.mesh");
    entityPtr->setMaterialName("wall"); // set material for bottom wall
-
    // create the SceneNode for the bottom wall
-   nodePtr = sceneManagerPtr->getRootSceneNode()->
-   createChildSceneNode("WallBottom");
+   nodePtr = sceneManagerPtr->getRootSceneNode()->createChildSceneNode("WallBottom");
    nodePtr->attachObject(entityPtr); // attach bottom wall to SceneNode
    nodePtr->setPosition(0, -70, 0); // set the bottom wall's position
    nodePtr->setScale(1.95, .05, .1); // set bottom wall's size
+
    entityPtr = sceneManagerPtr->createEntity("WallTop", "cube.mesh");
    entityPtr->setMaterialName("wall"); // set the material for top wall
-
    // create the SceneNode for the top wall
-   nodePtr = sceneManagerPtr->getRootSceneNode()->
-   createChildSceneNode("WallTop");
+   nodePtr = sceneManagerPtr->getRootSceneNode()->createChildSceneNode("WallTop");
    nodePtr->attachObject(entityPtr); // attach top wall to the SceneNode
    nodePtr->setPosition(0, 70, 0); // set the top wall's position
    nodePtr->setScale(1.95, .05, .1); // set the top wall's size
@@ -218,8 +215,7 @@ bool Pong::keyPressed(const OIS::KeyEvent &keyEventRef)
            break;
         case OIS::KC_P: // P key hit: pause the game
            pause = true; // set pause to true when the user pauses the game
-		       Overlay *pauseOverlayPtr =
-           OverlayManager::getSingleton().getByName("PauseOverlay");
+		   Overlay *pauseOverlayPtr = OverlayManager::getSingleton().getByName("PauseOverlay");
            pauseOverlayPtr->show(); // show the pause Overlay
            break;
       } // end switch
@@ -253,6 +249,7 @@ bool Pong::frameEnded(const FrameEvent &frameEvent)
 bool Pong::frameStarted(const FrameEvent &frameEvent)
   {
     keyboardPtr->capture(); // get keyboard events
+    
     // the game is not paused and the Ball should move
     if (!wait && !pause)
      {

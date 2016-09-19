@@ -38,7 +38,7 @@ class Pong : public FrameListener, public OIS::KeyListener
       // Ogre objects
       Root *rootPtr; // pointer to Ogre's Root object
       SceneManager *sceneManagerPtr; // pointer to the SceneManager
-      OverlaySystem *mOverlaySystem;
+      OverlaySystem *mOverlaySystem; //pointer to the OverlaySystem
       RenderWindow *windowPtr; // pointer to RenderWindow to render scene in
       Viewport *viewportPtr; // pointer to Viewport, area that a camera sees
       Camera *cameraPtr; // pointer to a Camera in the scene
