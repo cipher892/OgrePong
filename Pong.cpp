@@ -38,7 +38,7 @@ Pong::Pong()
    mOverlaySystem = new OverlaySystem();
    sceneManagerPtr->addRenderQueueListener(mOverlaySystem);
 
-   // create the Camera
+   // create the Cameral
    cameraPtr = sceneManagerPtr->createCamera("PongCamera");
    cameraPtr->setPosition(Vector3(0, 0, 200)); // set Camera position
    cameraPtr->lookAt(Vector3(0, 0, 0)); // set where Camera looks
@@ -58,13 +58,19 @@ Pong::Pong()
    // create the Light
    Light *lightPtr = sceneManagerPtr->createLight("Light"); // a Light
    lightPtr->setPosition(0, 0, 50); // set the Light's position
-   unsigned long hWnd; // variable to hold the window handle
-   windowPtr->getCustomAttribute("WINDOW", &hWnd); // get window handle
-   OIS::ParamList paramList; // create an OIS ParamList
+   
+   //initialise OIS
+   unsigned long hWnd; // variable to hold the window handle retrieved from the render window
+   windowPtr->getCustomAttribute("WINDOW", &hWnd); // get window handle and populate handle variable
+   OIS::ParamList paramList; // create an OIS ParamList, used to pass parameters to classes
+   //insert the string "WINDOW" and <str>hwnd into the parameter list
    paramList.insert(OIS::ParamList::value_type("WINDOW",Ogre::StringConverter::toString(hWnd)));
-   inputManagerPtr = OIS::InputManager::createInputSystem(paramList);
-   keyboardPtr = static_cast< OIS::Keyboard* >(inputManagerPtr->createInputObject(OIS::OISKeyboard, true)); // create a Keyboard
+   inputManagerPtr = OIS::InputManager::createInputSystem(paramList); //create the OIS input system
+   /*create a Keyboard. use static cast because inputmanager returns ois object
+   use true or false if you want input to be buffered or not */
+   keyboardPtr = static_cast< OIS::Keyboard* >(inputManagerPtr->createInputObject(OIS::OISKeyboard, true)); 
    keyboardPtr->setEventCallback(this); // add a KeyListener
+
    rootPtr->addFrameListener(this);  // add this Pong as a FrameListener
 
    // load resources for Pong
@@ -215,7 +221,7 @@ bool Pong::keyPressed(const OIS::KeyEvent &keyEventRef)
            break;
         case OIS::KC_P: // P key hit: pause the game
            pause = true; // set pause to true when the user pauses the game
-		   Overlay *pauseOverlayPtr = OverlayManager::getSingleton().getByName("PauseOverlay");
+		       Overlay *pauseOverlayPtr = OverlayManager::getSingleton().getByName("PauseOverlay");
            pauseOverlayPtr->show(); // show the pause Overlay
            break;
       } // end switch

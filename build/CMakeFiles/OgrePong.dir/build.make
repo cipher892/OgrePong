@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chuks/OgrePong
+CMAKE_SOURCE_DIR = /home/chuks/others/OgrePong
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chuks/OgrePong/build
+CMAKE_BINARY_DIR = /home/chuks/others/OgrePong/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OgrePong.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/OgrePong.dir/flags.make
 
 CMakeFiles/OgrePong.dir/Ball.cpp.o: CMakeFiles/OgrePong.dir/flags.make
 CMakeFiles/OgrePong.dir/Ball.cpp.o: ../Ball.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/others/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/OgrePong.dir/Ball.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Ball.cpp.o -c /home/chuks/OgrePong/Ball.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Ball.cpp.o -c /home/chuks/others/OgrePong/Ball.cpp
 
 CMakeFiles/OgrePong.dir/Ball.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OgrePong.dir/Ball.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/chuks/OgrePong/Ball.cpp > CMakeFiles/OgrePong.dir/Ball.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/chuks/others/OgrePong/Ball.cpp > CMakeFiles/OgrePong.dir/Ball.cpp.i
 
 CMakeFiles/OgrePong.dir/Ball.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OgrePong.dir/Ball.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/chuks/OgrePong/Ball.cpp -o CMakeFiles/OgrePong.dir/Ball.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/chuks/others/OgrePong/Ball.cpp -o CMakeFiles/OgrePong.dir/Ball.cpp.s
 
 CMakeFiles/OgrePong.dir/Ball.cpp.o.requires:
 .PHONY : CMakeFiles/OgrePong.dir/Ball.cpp.o.requires
@@ -74,17 +74,17 @@ CMakeFiles/OgrePong.dir/Ball.cpp.o.provides.build: CMakeFiles/OgrePong.dir/Ball.
 
 CMakeFiles/OgrePong.dir/Paddle.cpp.o: CMakeFiles/OgrePong.dir/flags.make
 CMakeFiles/OgrePong.dir/Paddle.cpp.o: ../Paddle.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/others/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/OgrePong.dir/Paddle.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Paddle.cpp.o -c /home/chuks/OgrePong/Paddle.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Paddle.cpp.o -c /home/chuks/others/OgrePong/Paddle.cpp
 
 CMakeFiles/OgrePong.dir/Paddle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OgrePong.dir/Paddle.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/chuks/OgrePong/Paddle.cpp > CMakeFiles/OgrePong.dir/Paddle.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/chuks/others/OgrePong/Paddle.cpp > CMakeFiles/OgrePong.dir/Paddle.cpp.i
 
 CMakeFiles/OgrePong.dir/Paddle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OgrePong.dir/Paddle.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/chuks/OgrePong/Paddle.cpp -o CMakeFiles/OgrePong.dir/Paddle.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/chuks/others/OgrePong/Paddle.cpp -o CMakeFiles/OgrePong.dir/Paddle.cpp.s
 
 CMakeFiles/OgrePong.dir/Paddle.cpp.o.requires:
 .PHONY : CMakeFiles/OgrePong.dir/Paddle.cpp.o.requires
@@ -97,17 +97,17 @@ CMakeFiles/OgrePong.dir/Paddle.cpp.o.provides.build: CMakeFiles/OgrePong.dir/Pad
 
 CMakeFiles/OgrePong.dir/Pong.cpp.o: CMakeFiles/OgrePong.dir/flags.make
 CMakeFiles/OgrePong.dir/Pong.cpp.o: ../Pong.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/others/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/OgrePong.dir/Pong.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Pong.cpp.o -c /home/chuks/OgrePong/Pong.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Pong.cpp.o -c /home/chuks/others/OgrePong/Pong.cpp
 
 CMakeFiles/OgrePong.dir/Pong.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OgrePong.dir/Pong.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/chuks/OgrePong/Pong.cpp > CMakeFiles/OgrePong.dir/Pong.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/chuks/others/OgrePong/Pong.cpp > CMakeFiles/OgrePong.dir/Pong.cpp.i
 
 CMakeFiles/OgrePong.dir/Pong.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OgrePong.dir/Pong.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/chuks/OgrePong/Pong.cpp -o CMakeFiles/OgrePong.dir/Pong.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/chuks/others/OgrePong/Pong.cpp -o CMakeFiles/OgrePong.dir/Pong.cpp.s
 
 CMakeFiles/OgrePong.dir/Pong.cpp.o.requires:
 .PHONY : CMakeFiles/OgrePong.dir/Pong.cpp.o.requires
@@ -120,17 +120,17 @@ CMakeFiles/OgrePong.dir/Pong.cpp.o.provides.build: CMakeFiles/OgrePong.dir/Pong.
 
 CMakeFiles/OgrePong.dir/Pongmain.cpp.o: CMakeFiles/OgrePong.dir/flags.make
 CMakeFiles/OgrePong.dir/Pongmain.cpp.o: ../Pongmain.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/others/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/OgrePong.dir/Pongmain.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Pongmain.cpp.o -c /home/chuks/OgrePong/Pongmain.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Pongmain.cpp.o -c /home/chuks/others/OgrePong/Pongmain.cpp
 
 CMakeFiles/OgrePong.dir/Pongmain.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OgrePong.dir/Pongmain.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/chuks/OgrePong/Pongmain.cpp > CMakeFiles/OgrePong.dir/Pongmain.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/chuks/others/OgrePong/Pongmain.cpp > CMakeFiles/OgrePong.dir/Pongmain.cpp.i
 
 CMakeFiles/OgrePong.dir/Pongmain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OgrePong.dir/Pongmain.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/chuks/OgrePong/Pongmain.cpp -o CMakeFiles/OgrePong.dir/Pongmain.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/chuks/others/OgrePong/Pongmain.cpp -o CMakeFiles/OgrePong.dir/Pongmain.cpp.s
 
 CMakeFiles/OgrePong.dir/Pongmain.cpp.o.requires:
 .PHONY : CMakeFiles/OgrePong.dir/Pongmain.cpp.o.requires
@@ -173,6 +173,38 @@ bin/OgrePong: CMakeFiles/OgrePong.dir/link.txt
 CMakeFiles/OgrePong.dir/build: bin/OgrePong
 .PHONY : CMakeFiles/OgrePong.dir/build
 
+# Object files for target OgrePong
+OgrePong_OBJECTS = \
+"CMakeFiles/OgrePong.dir/Ball.cpp.o" \
+"CMakeFiles/OgrePong.dir/Paddle.cpp.o" \
+"CMakeFiles/OgrePong.dir/Pong.cpp.o" \
+"CMakeFiles/OgrePong.dir/Pongmain.cpp.o"
+
+# External object files for target OgrePong
+OgrePong_EXTERNAL_OBJECTS =
+
+CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/Ball.cpp.o
+CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/Paddle.cpp.o
+CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/Pong.cpp.o
+CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/Pongmain.cpp.o
+CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/build.make
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/local/lib/libOgreMain.so
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libboost_system.so
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libpthread.so
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libOIS.so
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/local/lib/libOgreOverlay.so
+CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable CMakeFiles/CMakeRelink.dir/OgrePong"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OgrePong.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+CMakeFiles/OgrePong.dir/preinstall: CMakeFiles/CMakeRelink.dir/OgrePong
+.PHONY : CMakeFiles/OgrePong.dir/preinstall
+
 CMakeFiles/OgrePong.dir/requires: CMakeFiles/OgrePong.dir/Ball.cpp.o.requires
 CMakeFiles/OgrePong.dir/requires: CMakeFiles/OgrePong.dir/Paddle.cpp.o.requires
 CMakeFiles/OgrePong.dir/requires: CMakeFiles/OgrePong.dir/Pong.cpp.o.requires
@@ -184,6 +216,6 @@ CMakeFiles/OgrePong.dir/clean:
 .PHONY : CMakeFiles/OgrePong.dir/clean
 
 CMakeFiles/OgrePong.dir/depend:
-	cd /home/chuks/OgrePong/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chuks/OgrePong /home/chuks/OgrePong /home/chuks/OgrePong/build /home/chuks/OgrePong/build /home/chuks/OgrePong/build/CMakeFiles/OgrePong.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chuks/others/OgrePong/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chuks/others/OgrePong /home/chuks/others/OgrePong /home/chuks/others/OgrePong/build /home/chuks/others/OgrePong/build /home/chuks/others/OgrePong/build/CMakeFiles/OgrePong.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/OgrePong.dir/depend
 

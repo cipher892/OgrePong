@@ -4,10 +4,10 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/chuks/OgrePong/Ball.cpp" "/home/chuks/OgrePong/build/CMakeFiles/OgrePong.dir/Ball.cpp.o"
-  "/home/chuks/OgrePong/Paddle.cpp" "/home/chuks/OgrePong/build/CMakeFiles/OgrePong.dir/Paddle.cpp.o"
-  "/home/chuks/OgrePong/Pong.cpp" "/home/chuks/OgrePong/build/CMakeFiles/OgrePong.dir/Pong.cpp.o"
-  "/home/chuks/OgrePong/Pongmain.cpp" "/home/chuks/OgrePong/build/CMakeFiles/OgrePong.dir/Pongmain.cpp.o"
+  "/home/chuks/others/OgrePong/Ball.cpp" "/home/chuks/others/OgrePong/build/CMakeFiles/OgrePong.dir/Ball.cpp.o"
+  "/home/chuks/others/OgrePong/Paddle.cpp" "/home/chuks/others/OgrePong/build/CMakeFiles/OgrePong.dir/Paddle.cpp.o"
+  "/home/chuks/others/OgrePong/Pong.cpp" "/home/chuks/others/OgrePong/build/CMakeFiles/OgrePong.dir/Pong.cpp.o"
+  "/home/chuks/others/OgrePong/Pongmain.cpp" "/home/chuks/others/OgrePong/build/CMakeFiles/OgrePong.dir/Pongmain.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

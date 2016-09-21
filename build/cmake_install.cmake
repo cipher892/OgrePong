@@ -1,8 +1,8 @@
-# Install script for directory: /home/chuks/OgrePong
+# Install script for directory: /home/chuks/others/OgrePong
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/chuks/OgrePong/build/bin")
+  SET(CMAKE_INSTALL_PREFIX "/home/chuks/others/OgrePong/build/bin")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,21 +34,7 @@ ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   IF("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Aa][Ll][Ll])$")
-    IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/OgrePong" AND
-       NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/OgrePong")
-      FILE(RPATH_CHECK
-           FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/OgrePong"
-           RPATH "")
-    ENDIF()
-    FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/chuks/OgrePong/build/bin/OgrePong")
-    IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/OgrePong" AND
-       NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/OgrePong")
-      FILE(RPATH_REMOVE
-           FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/OgrePong")
-      IF(CMAKE_INSTALL_DO_STRIP)
-        EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/OgrePong")
-      ENDIF(CMAKE_INSTALL_DO_STRIP)
-    ENDIF()
+    FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/chuks/others/OgrePong/build/CMakeFiles/CMakeRelink.dir/OgrePong")
   ENDIF("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Aa][Ll][Ll])$")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
@@ -58,7 +44,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/chuks/OgrePong/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/chuks/others/OgrePong/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/chuks/OgrePong/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/chuks/others/OgrePong/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

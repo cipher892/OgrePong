@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chuks/OgrePong
+CMAKE_SOURCE_DIR = /home/chuks/others/OgrePong
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chuks/OgrePong/build
+CMAKE_BINARY_DIR = /home/chuks/others/OgrePong/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/OgrePong.dir
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/chuks/OgrePong/build
 CMakeFiles/OgrePong.dir/all:
 	$(MAKE) -f CMakeFiles/OgrePong.dir/build.make CMakeFiles/OgrePong.dir/depend
 	$(MAKE) -f CMakeFiles/OgrePong.dir/build.make CMakeFiles/OgrePong.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/OgrePong/build/CMakeFiles  1 2 3 4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/others/OgrePong/build/CMakeFiles  1 2 3 4
 	@echo "Built target OgrePong"
 .PHONY : CMakeFiles/OgrePong.dir/all
 
@@ -69,14 +69,23 @@ all: CMakeFiles/OgrePong.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/OgrePong.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chuks/OgrePong/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chuks/others/OgrePong/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/OgrePong.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chuks/OgrePong/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chuks/others/OgrePong/build/CMakeFiles 0
 .PHONY : CMakeFiles/OgrePong.dir/rule
 
 # Convenience name for target.
 OgrePong: CMakeFiles/OgrePong.dir/rule
 .PHONY : OgrePong
+
+# Pre-install relink rule for target.
+CMakeFiles/OgrePong.dir/preinstall:
+	$(MAKE) -f CMakeFiles/OgrePong.dir/build.make CMakeFiles/OgrePong.dir/preinstall
+.PHONY : CMakeFiles/OgrePong.dir/preinstall
+
+# Prepare target for install.
+preinstall: CMakeFiles/OgrePong.dir/preinstall
+.PHONY : preinstall
 
 # clean rule for target.
 CMakeFiles/OgrePong.dir/clean:

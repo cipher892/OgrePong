@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chuks/OgrePong
+CMAKE_SOURCE_DIR = /home/chuks/others/OgrePong
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chuks/OgrePong/build
+CMAKE_BINARY_DIR = /home/chuks/others/OgrePong/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -110,9 +100,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chuks/OgrePong/build/CMakeFiles /home/chuks/OgrePong/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chuks/others/OgrePong/build/CMakeFiles /home/chuks/others/OgrePong/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chuks/OgrePong/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chuks/others/OgrePong/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -151,6 +141,11 @@ OgrePong: cmake_check_build_system
 OgrePong/fast:
 	$(MAKE) -f CMakeFiles/OgrePong.dir/build.make CMakeFiles/OgrePong.dir/build
 .PHONY : OgrePong/fast
+
+# Manual pre-install relink rule for target.
+OgrePong/preinstall:
+	$(MAKE) -f CMakeFiles/OgrePong.dir/build.make CMakeFiles/OgrePong.dir/preinstall
+.PHONY : OgrePong/preinstall
 
 Ball.o: Ball.cpp.o
 .PHONY : Ball.o
@@ -258,7 +253,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... Ball.o"

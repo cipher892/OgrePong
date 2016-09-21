@@ -5,6 +5,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/OgrePong.dir/Pongmain.cpp.o"
   "bin/OgrePong.pdb"
   "bin/OgrePong"
+  "bin/OgrePong.pdb"
+  "CMakeFiles/CMakeRelink.dir/OgrePong"
 )
 
 # Per-language clean rules from dependency scanning.

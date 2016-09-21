@@ -1,1 +1,1 @@
-/home/chuks/OgrePong/build/CMakeFiles/OgrePong.dir
+/home/chuks/others/OgrePong/build/CMakeFiles/OgrePong.dir

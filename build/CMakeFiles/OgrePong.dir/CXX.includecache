@@ -6,25 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/chuks/OgrePong/Ball.cpp
-Ogre.h
--
-Ball.h
-/home/chuks/OgrePong/Ball.h
-Paddle.h
-/home/chuks/OgrePong/Paddle.h
-Pong.h
-/home/chuks/OgrePong/Pong.h
-
-/home/chuks/OgrePong/Ball.h
+/home/chuks/others/OgrePong/Ball.h
 Ogre.h
 -
 
-/home/chuks/OgrePong/Paddle.h
+/home/chuks/others/OgrePong/Paddle.h
 Ogre.h
 -
 
-/home/chuks/OgrePong/Pong.cpp
+/home/chuks/others/OgrePong/Pong.cpp
 sstream
 -
 stdexcept
@@ -42,13 +32,13 @@ OISInputManager.h
 OISKeyboard.h
 -
 Ball.h
-/home/chuks/OgrePong/Ball.h
+/home/chuks/others/OgrePong/Ball.h
 Paddle.h
-/home/chuks/OgrePong/Paddle.h
+/home/chuks/others/OgrePong/Paddle.h
 Pong.h
-/home/chuks/OgrePong/Pong.h
+/home/chuks/others/OgrePong/Pong.h
 
-/home/chuks/OgrePong/Pong.h
+/home/chuks/others/OgrePong/Pong.h
 Ogre.h
 -
 OISEvents.h
@@ -59,14 +49,6 @@ OISKeyboard.h
 -
 OgreOverlaySystem.h
 -
-
-/home/chuks/OgrePong/Pongmain.cpp
-iostream
--
-Pong.h
-/home/chuks/OgrePong/Pong.h
-windows.h
-/home/chuks/OgrePong/windows.h
 
 /usr/include/ois/OISConfig.h
 
