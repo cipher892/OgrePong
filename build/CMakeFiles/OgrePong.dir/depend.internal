@@ -220,6 +220,15 @@ CMakeFiles/OgrePong.dir/Ball.cpp.o
  /usr/local/include/OGRE/Threading/OgreThreadHeadersBoost.h
  /usr/local/include/OGRE/Threading/OgreThreadHeadersPoco.h
  /usr/local/include/OGRE/Threading/OgreThreadHeadersTBB.h
+ /usr/local/include/OgreAL/OgreAL.h
+ /usr/local/include/OgreAL/OgreALListener.h
+ /usr/local/include/OgreAL/OgreALOggSound.h
+ /usr/local/include/OgreAL/OgreALOggSoundStream.h
+ /usr/local/include/OgreAL/OgreALPrereqs.h
+ /usr/local/include/OgreAL/OgreALSound.h
+ /usr/local/include/OgreAL/OgreALSoundManager.h
+ /usr/local/include/OgreAL/OgreALSoundStream.h
+ /usr/local/include/OgreAL/OgreALWavSound.h
 CMakeFiles/OgrePong.dir/Paddle.cpp.o
  /home/chuks/others/OgrePong/Paddle.cpp
  /home/chuks/others/OgrePong/Paddle.h

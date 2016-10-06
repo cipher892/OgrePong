@@ -11,7 +11,7 @@ using namespace Ogre;
 Ball::Ball(SceneManager *ptr)
   {
     sceneManagerPtr = ptr; // set pointer to the SceneManager
-    //soundManagerPtr = new OgreAL::SoundManager();// create SoundManager
+    soundManagerPtr = new OgreAL::SoundManager(sceneManagerPtr);// create SoundManager
     speed = 100; // speed of the Ball
     direction = Vector3(1, -1, 0); // direction of the Ball
   } // end Ball constructor
@@ -20,7 +20,8 @@ Ball::Ball(SceneManager *ptr)
 // Ball destructor
 Ball::~Ball()
   {
-    // empty body
+    delete soundManagerPtr;
+    soundManagerPtr = 0;
   } // end Ball destructor
  
 // add the Ball to the scene
@@ -34,11 +35,11 @@ void Ball::addToScene()
     nodePtr->setScale(.05, .05, .05); // scale SceneNode
 
     // attach sounds to Ball so they will play from where Ball is
-     wallSoundPtr = soundManagerPtr -> createSound("wallSound", "wallSound.wav", false);
+     wallSoundPtr = soundManagerPtr->createSound("wallSound", "wallsound.wav", false);
      nodePtr->attachObject(wallSoundPtr); // attach a sound to SceneNode
-     paddleSoundPtr = soundManagerPtr -> createSound("paddleSound", "paddleSound.wav", false);
+     paddleSoundPtr = soundManagerPtr->createSound("paddleSound", "paddlesound.wav", false);
      nodePtr->attachObject(paddleSoundPtr); // attach sound to SceneNode
-     scoreSoundPtr = soundManagerPtr -> createSound("cheer", "cheer.wav", false); 
+     scoreSoundPtr = soundManagerPtr->createSound("cheer", "cheer.wav", false); 
   } // end function addToScene
 
 
