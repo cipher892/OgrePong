@@ -95,9 +95,32 @@ CMakeFiles/OgrePong.dir/Paddle.cpp.o.provides: CMakeFiles/OgrePong.dir/Paddle.cp
 
 CMakeFiles/OgrePong.dir/Paddle.cpp.o.provides.build: CMakeFiles/OgrePong.dir/Paddle.cpp.o
 
+CMakeFiles/OgrePong.dir/Wall.cpp.o: CMakeFiles/OgrePong.dir/flags.make
+CMakeFiles/OgrePong.dir/Wall.cpp.o: ../Wall.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/others/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/OgrePong.dir/Wall.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Wall.cpp.o -c /home/chuks/others/OgrePong/Wall.cpp
+
+CMakeFiles/OgrePong.dir/Wall.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OgrePong.dir/Wall.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/chuks/others/OgrePong/Wall.cpp > CMakeFiles/OgrePong.dir/Wall.cpp.i
+
+CMakeFiles/OgrePong.dir/Wall.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OgrePong.dir/Wall.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/chuks/others/OgrePong/Wall.cpp -o CMakeFiles/OgrePong.dir/Wall.cpp.s
+
+CMakeFiles/OgrePong.dir/Wall.cpp.o.requires:
+.PHONY : CMakeFiles/OgrePong.dir/Wall.cpp.o.requires
+
+CMakeFiles/OgrePong.dir/Wall.cpp.o.provides: CMakeFiles/OgrePong.dir/Wall.cpp.o.requires
+	$(MAKE) -f CMakeFiles/OgrePong.dir/build.make CMakeFiles/OgrePong.dir/Wall.cpp.o.provides.build
+.PHONY : CMakeFiles/OgrePong.dir/Wall.cpp.o.provides
+
+CMakeFiles/OgrePong.dir/Wall.cpp.o.provides.build: CMakeFiles/OgrePong.dir/Wall.cpp.o
+
 CMakeFiles/OgrePong.dir/Pong.cpp.o: CMakeFiles/OgrePong.dir/flags.make
 CMakeFiles/OgrePong.dir/Pong.cpp.o: ../Pong.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/others/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/others/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/OgrePong.dir/Pong.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Pong.cpp.o -c /home/chuks/others/OgrePong/Pong.cpp
 
@@ -120,7 +143,7 @@ CMakeFiles/OgrePong.dir/Pong.cpp.o.provides.build: CMakeFiles/OgrePong.dir/Pong.
 
 CMakeFiles/OgrePong.dir/Pongmain.cpp.o: CMakeFiles/OgrePong.dir/flags.make
 CMakeFiles/OgrePong.dir/Pongmain.cpp.o: ../Pongmain.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/others/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/chuks/others/OgrePong/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/OgrePong.dir/Pongmain.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/OgrePong.dir/Pongmain.cpp.o -c /home/chuks/others/OgrePong/Pongmain.cpp
 
@@ -145,6 +168,7 @@ CMakeFiles/OgrePong.dir/Pongmain.cpp.o.provides.build: CMakeFiles/OgrePong.dir/P
 OgrePong_OBJECTS = \
 "CMakeFiles/OgrePong.dir/Ball.cpp.o" \
 "CMakeFiles/OgrePong.dir/Paddle.cpp.o" \
+"CMakeFiles/OgrePong.dir/Wall.cpp.o" \
 "CMakeFiles/OgrePong.dir/Pong.cpp.o" \
 "CMakeFiles/OgrePong.dir/Pongmain.cpp.o"
 
@@ -153,6 +177,7 @@ OgrePong_EXTERNAL_OBJECTS =
 
 bin/OgrePong: CMakeFiles/OgrePong.dir/Ball.cpp.o
 bin/OgrePong: CMakeFiles/OgrePong.dir/Paddle.cpp.o
+bin/OgrePong: CMakeFiles/OgrePong.dir/Wall.cpp.o
 bin/OgrePong: CMakeFiles/OgrePong.dir/Pong.cpp.o
 bin/OgrePong: CMakeFiles/OgrePong.dir/Pongmain.cpp.o
 bin/OgrePong: CMakeFiles/OgrePong.dir/build.make
@@ -165,6 +190,7 @@ bin/OgrePong: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 bin/OgrePong: /usr/lib/x86_64-linux-gnu/libpthread.so
 bin/OgrePong: /usr/lib/x86_64-linux-gnu/libOIS.so
 bin/OgrePong: /usr/local/lib/libOgreOverlay.so
+bin/OgrePong: /usr/local/lib/libOgreOde_Core_d.so.1.3.0
 bin/OgrePong: CMakeFiles/OgrePong.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable bin/OgrePong"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OgrePong.dir/link.txt --verbose=$(VERBOSE)
@@ -177,6 +203,7 @@ CMakeFiles/OgrePong.dir/build: bin/OgrePong
 OgrePong_OBJECTS = \
 "CMakeFiles/OgrePong.dir/Ball.cpp.o" \
 "CMakeFiles/OgrePong.dir/Paddle.cpp.o" \
+"CMakeFiles/OgrePong.dir/Wall.cpp.o" \
 "CMakeFiles/OgrePong.dir/Pong.cpp.o" \
 "CMakeFiles/OgrePong.dir/Pongmain.cpp.o"
 
@@ -185,6 +212,7 @@ OgrePong_EXTERNAL_OBJECTS =
 
 CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/Ball.cpp.o
 CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/Paddle.cpp.o
+CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/Wall.cpp.o
 CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/Pong.cpp.o
 CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/Pongmain.cpp.o
 CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/build.make
@@ -197,6 +225,7 @@ CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libboost_chrono.s
 CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libpthread.so
 CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libOIS.so
 CMakeFiles/CMakeRelink.dir/OgrePong: /usr/local/lib/libOgreOverlay.so
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/local/lib/libOgreOde_Core_d.so.1.3.0
 CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/relink.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable CMakeFiles/CMakeRelink.dir/OgrePong"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OgrePong.dir/relink.txt --verbose=$(VERBOSE)
@@ -207,6 +236,7 @@ CMakeFiles/OgrePong.dir/preinstall: CMakeFiles/CMakeRelink.dir/OgrePong
 
 CMakeFiles/OgrePong.dir/requires: CMakeFiles/OgrePong.dir/Ball.cpp.o.requires
 CMakeFiles/OgrePong.dir/requires: CMakeFiles/OgrePong.dir/Paddle.cpp.o.requires
+CMakeFiles/OgrePong.dir/requires: CMakeFiles/OgrePong.dir/Wall.cpp.o.requires
 CMakeFiles/OgrePong.dir/requires: CMakeFiles/OgrePong.dir/Pong.cpp.o.requires
 CMakeFiles/OgrePong.dir/requires: CMakeFiles/OgrePong.dir/Pongmain.cpp.o.requires
 .PHONY : CMakeFiles/OgrePong.dir/requires

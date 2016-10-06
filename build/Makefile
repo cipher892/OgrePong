@@ -243,6 +243,30 @@ Pongmain.cpp.s:
 	$(MAKE) -f CMakeFiles/OgrePong.dir/build.make CMakeFiles/OgrePong.dir/Pongmain.cpp.s
 .PHONY : Pongmain.cpp.s
 
+Wall.o: Wall.cpp.o
+.PHONY : Wall.o
+
+# target to build an object file
+Wall.cpp.o:
+	$(MAKE) -f CMakeFiles/OgrePong.dir/build.make CMakeFiles/OgrePong.dir/Wall.cpp.o
+.PHONY : Wall.cpp.o
+
+Wall.i: Wall.cpp.i
+.PHONY : Wall.i
+
+# target to preprocess a source file
+Wall.cpp.i:
+	$(MAKE) -f CMakeFiles/OgrePong.dir/build.make CMakeFiles/OgrePong.dir/Wall.cpp.i
+.PHONY : Wall.cpp.i
+
+Wall.s: Wall.cpp.s
+.PHONY : Wall.s
+
+# target to generate assembly for a file
+Wall.cpp.s:
+	$(MAKE) -f CMakeFiles/OgrePong.dir/build.make CMakeFiles/OgrePong.dir/Wall.cpp.s
+.PHONY : Wall.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -267,6 +291,9 @@ help:
 	@echo "... Pongmain.o"
 	@echo "... Pongmain.i"
 	@echo "... Pongmain.s"
+	@echo "... Wall.o"
+	@echo "... Wall.i"
+	@echo "... Wall.s"
 .PHONY : help
 
 

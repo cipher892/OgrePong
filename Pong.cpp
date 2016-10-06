@@ -4,13 +4,16 @@
 #include <Ogre.h> // Ogre class definitions
 #include <OgreOverlayManager.h>
 #include <OgreOverlayElement.h>
-//#include <OgreAL.h> // OgreAL class definitions
+#include <OgreAL.h> // OgreAL class definitions
 #include <OISEvents.h> // OISEvents class definition
 #include <OISInputManager.h> // OISInputManager class definition
 #include <OISKeyboard.h> // OISKeyboard class definition
+#include <OgreOde_Core.h> //OgreOde definitions
 #include "Ball.h" // Ball class definition
 #include "Paddle.h" // Paddle class definition
 #include "Pong.h" // Pong class definition
+#include "Wall.h" //Wall class definition
+#include "CollisionTestedObject.h"
 using namespace std;
 using namespace Ogre;
 
@@ -38,7 +41,7 @@ Pong::Pong()
    mOverlaySystem = new OverlaySystem();
    sceneManagerPtr->addRenderQueueListener(mOverlaySystem);
 
-   // create the Cameral
+   // create the Camera
    cameraPtr = sceneManagerPtr->createCamera("PongCamera");
    cameraPtr->setPosition(Vector3(0, 0, 200)); // set Camera position
    cameraPtr->lookAt(Vector3(0, 0, 0)); // set where Camera looks
@@ -68,9 +71,24 @@ Pong::Pong()
    inputManagerPtr = OIS::InputManager::createInputSystem(paramList); //create the OIS input system
    /*create a Keyboard. use static cast because inputmanager returns ois object
    use true or false if you want input to be buffered or not */
-   keyboardPtr = static_cast< OIS::Keyboard* >(inputManagerPtr->createInputObject(OIS::OISKeyboard, true)); 
+   keyboardPtr = static_cast<OIS::Keyboard*>(inputManagerPtr->createInputObject(OIS::OISKeyboard, true)); 
    keyboardPtr->setEventCallback(this); // add a KeyListener
 
+   //create world to monitor dynamic collisions
+   world = new OgreOde::World(sceneManagerPtr);
+   world->setGravity(Vector3(0, 0, 0));
+   world->setCFM(10e-5);
+   world->setERP(0.8);
+   world->setAutoSleep(true);
+   world->setAutoSleepAverageSamplesCount(10);
+   world->setContactCorrectionVelocity(1.0);
+   world->setCollisionListener(this);
+
+   Real step_size = Real(0.01);
+   Real max_interval = Real(1.0 / 4);
+   Real time_scale = Real(1);
+   stepper = new OgreOde::StepHandler(world, OgreOde::StepHandler::BasicStep, step_size, max_interval, time_scale);
+   stepper->setAutomatic(OgreOde::StepHandler::AutoMode_PostFrame, rootPtr);   
    rootPtr->addFrameListener(this);  // add this Pong as a FrameListener
 
    // load resources for Pong
@@ -107,6 +125,21 @@ Pong::~Pong()
  
  } // end Pong destructor
 
+bool Pong::collision(OgreOde::Contact* contact)
+{
+  OgreOde::Geometry* const g1 = contact->getFirstGeometry();
+  OgreOde::Geometry* const g2 = contact->getSecondGeometry();
+   if (g1 && g2)
+   {
+      const OgreOde::Body* const b1 = g1->getBody();
+      const OgreOde::Body* const  b2 = g2->getBody();
+      if (b1 && b2 && OgreOde::Joint::areConnected(b1, b2))
+          return false;
+   }  
+  any_cast<CollisionTestedObject*>(g1->getUserAny())->collide(contact);
+  any_cast<CollisionTestedObject*>(g2->getUserAny())->collide(contact);
+  return false;
+}
 
 void Pong::createScene()
  {
@@ -114,49 +147,28 @@ void Pong::createScene()
 	Overlay *scoreOverlayPtr = OverlayManager::getSingleton().getByName("Score");
   scoreOverlayPtr->show(); // show the Overlay
 
-   // make the game objects
-   ballPtr = new Ball(sceneManagerPtr); // make the Ball
+   //make ball
+   ballPtr = new Ball(world); // make the Ball
    ballPtr->addToScene(); // add the Ball to the scene
    
-   rightPaddlePtr = new Paddle(sceneManagerPtr, "RightPaddle", 90);
-   rightPaddlePtr->addToScene(); // add a Paddle to the scene
-   leftPaddlePtr = new Paddle(sceneManagerPtr, "LeftPaddle", -90);
-   leftPaddlePtr->addToScene(); // add a Paddle to the scene
+   //make paddles
+   rightPaddlePtr = new Paddle(world, "RightPaddle", 90);
+   rightPaddlePtr->addToScene(); // add right Paddle to the scene
+   leftPaddlePtr = new Paddle(world, "LeftPaddle", -90);
+   leftPaddlePtr->addToScene(); // add left Paddle to the scene
 
    // create the walls
-   Entity *entityPtr = sceneManagerPtr->createEntity("WallLeft", "cube.mesh"); // create the left wall
-   entityPtr->setMaterialName("wall"); // set material for left wall
-   // create the SceneNode for the left wall
-   SceneNode *nodePtr = sceneManagerPtr->getRootSceneNode()->createChildSceneNode("WallLeft");
-   nodePtr->attachObject(entityPtr); // attach left wall to SceneNode
-   nodePtr->setPosition(-95, 0, 0); // set the left wall's position
-   nodePtr->setScale(.05, 1.45, .1); // set the left wall's size
-
-   entityPtr = sceneManagerPtr->createEntity("WallRight", "cube.mesh");
-   entityPtr->setMaterialName("wall"); // set material for right wall
-   // create the SceneNode for the right wall
-   nodePtr = sceneManagerPtr->getRootSceneNode()->createChildSceneNode("WallRight");
-   nodePtr->attachObject(entityPtr); // attach right wall to SceneNode
-   nodePtr->setPosition(95, 0, 0); // set the right wall's position
-   nodePtr->setScale(.05, 1.45, .1); // set the right wall's size
-
-   entityPtr = sceneManagerPtr->createEntity("WallBottom", "cube.mesh");
-   entityPtr->setMaterialName("wall"); // set material for bottom wall
-   // create the SceneNode for the bottom wall
-   nodePtr = sceneManagerPtr->getRootSceneNode()->createChildSceneNode("WallBottom");
-   nodePtr->attachObject(entityPtr); // attach bottom wall to SceneNode
-   nodePtr->setPosition(0, -70, 0); // set the bottom wall's position
-   nodePtr->setScale(1.95, .05, .1); // set bottom wall's size
-
-   entityPtr = sceneManagerPtr->createEntity("WallTop", "cube.mesh");
-   entityPtr->setMaterialName("wall"); // set the material for top wall
-   // create the SceneNode for the top wall
-   nodePtr = sceneManagerPtr->getRootSceneNode()->createChildSceneNode("WallTop");
-   nodePtr->attachObject(entityPtr); // attach top wall to the SceneNode
-   nodePtr->setPosition(0, 70, 0); // set the top wall's position
-   nodePtr->setScale(1.95, .05, .1); // set the top wall's size
+   wallleft = new Wall(world, "WallLeft", Vector3(-95, 0, 0), Vector3(.05, 1.45, .1));
+   wallleft->addToScene();
+   wallright = new Wall(world, "WallRight", Vector3(95, 0, 0), Vector3(.05, 1.45, .1));
+   wallright->addToScene();
+   wallbottom = new Wall(world, "WallBottom", Vector3(0, -70, 0), Vector3(1.95, .05, .1));
+   wallbottom->addToScene();
+   walltop = new Wall(world, "WallTop", Vector3(0, 70, 0), Vector3(1.95, .05, .1));
+   walltop->addToScene();
  } // end function createScene
 
+ 
  // start a game of Pong
  void Pong::run()
  {
@@ -176,6 +188,7 @@ void Pong::updateScore(Players player)
    wait = true; // the game should wait to restart the Ball
    updateScoreText(); // update the score text on the screen
  } // end function updateScore
+
 
  // update the score text
 void Pong::updateScoreText()
@@ -220,6 +233,7 @@ bool Pong::keyPressed(const OIS::KeyEvent &keyEventRef)
            leftPaddlePtr->movePaddle(PADDLE_DOWN);
            break;
         case OIS::KC_P: // P key hit: pause the game
+           ballPtr->stop();
            pause = true; // set pause to true when the user pauses the game
 		       Overlay *pauseOverlayPtr = OverlayManager::getSingleton().getByName("PauseOverlay");
            pauseOverlayPtr->show(); // show the pause Overlay
@@ -248,7 +262,7 @@ bool Pong::keyReleased(const OIS::KeyEvent &keyEventRef)
 // return true if the program should render the next frame
 bool Pong::frameEnded(const FrameEvent &frameEvent)
  {
-   return !quit; // quit = false if the user hasn't quit yet
+    return !quit; // quit = false if the user hasn't quit yet
  } // end function frameEnded
 
  // process game logic, return true if the next frame should be rendered
@@ -260,12 +274,13 @@ bool Pong::frameStarted(const FrameEvent &frameEvent)
     if (!wait && !pause)
      {
        // move the Ball
-       ballPtr->moveBall(frameEvent.timeSinceLastFrame);
+       //ballPtr->moveBall(frameEvent.timeSinceLastFrame);
      } // end if
     // don't move the Ball if wait is true
     else if (wait)
      {
-       // increase time if it is less than 4 seconds
+        ballPtr->placeCenter();
+        // increase time if it is less than 4 seconds
        if (time < 4)
         // add the seconds since the last frame
         time += frameEvent.timeSinceLastFrame;
@@ -275,6 +290,6 @@ bool Pong::frameStarted(const FrameEvent &frameEvent)
         time = 0; // reset the control variable to 0
        } // end else
      } // end else
-
+ 
   return !quit; // quit = false
  }

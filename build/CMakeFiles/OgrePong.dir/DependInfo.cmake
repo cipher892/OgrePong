@@ -8,6 +8,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/chuks/others/OgrePong/Paddle.cpp" "/home/chuks/others/OgrePong/build/CMakeFiles/OgrePong.dir/Paddle.cpp.o"
   "/home/chuks/others/OgrePong/Pong.cpp" "/home/chuks/others/OgrePong/build/CMakeFiles/OgrePong.dir/Pong.cpp.o"
   "/home/chuks/others/OgrePong/Pongmain.cpp" "/home/chuks/others/OgrePong/build/CMakeFiles/OgrePong.dir/Pongmain.cpp.o"
+  "/home/chuks/others/OgrePong/Wall.cpp" "/home/chuks/others/OgrePong/build/CMakeFiles/OgrePong.dir/Wall.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -27,6 +28,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/local/include"
   "/usr/local/share/OGRE/samples/Common/include"
   "/usr/local/include/OGRE/Overlay"
+  "/usr/local/include/OgreOde_Core"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

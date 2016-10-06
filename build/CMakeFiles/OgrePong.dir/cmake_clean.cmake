@@ -1,6 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/OgrePong.dir/Ball.cpp.o"
   "CMakeFiles/OgrePong.dir/Paddle.cpp.o"
+  "CMakeFiles/OgrePong.dir/Wall.cpp.o"
   "CMakeFiles/OgrePong.dir/Pong.cpp.o"
   "CMakeFiles/OgrePong.dir/Pongmain.cpp.o"
   "bin/OgrePong.pdb"

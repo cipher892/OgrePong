@@ -3,6 +3,7 @@
 #ifndef PONG_H
 #define PONG_H
 #include <Ogre.h> // Ogre class definitions
+#include <OgreOde_Core.h> //OgreOde definitions
 #include <OISEvents.h> // OISEvents class definition
 #include <OISInputManager.h> // OISInputManager class definition
 #include <OISKeyboard.h> // OISKeyboard class definition
@@ -12,10 +13,11 @@ using namespace Ogre;
 
 class Ball; // forward declaration of class Ball
 class Paddle; // forward declaration of class Paddle
+class Wall; //forward declaration of class Wall
 
 enum Players {PLAYER1, PLAYER2};
 
-class Pong : public FrameListener, public OIS::KeyListener
+class Pong : public FrameListener, public OIS::KeyListener, public OgreOde::CollisionListener
 {
    public:
       Pong(); // constructor
@@ -31,10 +33,14 @@ class Pong : public FrameListener, public OIS::KeyListener
       virtual bool frameEnded(const FrameEvent &frameEvent);
       static void updateScore(Players player); // update the score
 
+      //Ode dynamics and collision objects
+      OgreOde::World *world; //pointer to ode's root object. Every object is added to world
+      OgreOde::StepHandler *stepper; //handles time, used to update events
+      bool collision(OgreOde::Contact* contact);
+
    private:
       void createScene(); // create the scene to be rendered
       static void updateScoreText(); // update the score on the screen
-
       // Ogre objects
       Root *rootPtr; // pointer to Ogre's Root object
       SceneManager *sceneManagerPtr; // pointer to the SceneManager
@@ -51,6 +57,10 @@ class Pong : public FrameListener, public OIS::KeyListener
       Ball *ballPtr; // pointer to the Ball
       Paddle *leftPaddlePtr; // pointer to player 1's Paddle
       Paddle *rightPaddlePtr; // pointer to player 2's Paddle
+      Wall *wallleft; //left wall
+      Wall *wallright; //right wall
+      Wall *walltop; //top wall
+      Wall *wallbottom; //bottom wall
 
       // variables to control game states
       bool quit, pause; // did user quit or pause the game?
