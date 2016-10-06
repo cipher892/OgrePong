@@ -165,6 +165,7 @@ bin/OgrePong: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 bin/OgrePong: /usr/lib/x86_64-linux-gnu/libpthread.so
 bin/OgrePong: /usr/lib/x86_64-linux-gnu/libOIS.so
 bin/OgrePong: /usr/local/lib/libOgreOverlay.so
+bin/OgrePong: /usr/local/lib/libOgreAL.so.0.0.0
 bin/OgrePong: CMakeFiles/OgrePong.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable bin/OgrePong"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OgrePong.dir/link.txt --verbose=$(VERBOSE)
@@ -197,6 +198,7 @@ CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libboost_chrono.s
 CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libpthread.so
 CMakeFiles/CMakeRelink.dir/OgrePong: /usr/lib/x86_64-linux-gnu/libOIS.so
 CMakeFiles/CMakeRelink.dir/OgrePong: /usr/local/lib/libOgreOverlay.so
+CMakeFiles/CMakeRelink.dir/OgrePong: /usr/local/lib/libOgreAL.so.0.0.0
 CMakeFiles/CMakeRelink.dir/OgrePong: CMakeFiles/OgrePong.dir/relink.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable CMakeFiles/CMakeRelink.dir/OgrePong"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OgrePong.dir/relink.txt --verbose=$(VERBOSE)

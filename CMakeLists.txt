@@ -72,44 +72,22 @@ if (NOT OGRE_BUILD_PLATFORM_IPHONE)
 	set(OGRE_LIBRARIES ${OGRE_LIBRARIES} ${Boost_LIBRARIES})
 endif()
  
-set(HDRS
-	./Ball.h
-	./Paddle.h
-	./Pong.h
-)
- 
-set(SRCS
-	./Ball.cpp
-	./Paddle.cpp
-	./Pong.cpp
-	./Pongmain.cpp
-)
- 
-include_directories( ${OIS_INCLUDE_DIRS}
-	${OGRE_INCLUDE_DIRS}
-	${OGRE_SAMPLES_INCLUDEPATH}
-	${OGRE_Overlay_INCLUDE_DIRS}
-)
+set(HDRS ./Ball.h ./Paddle.h ./Pong.h)
+set(SRCS ./Ball.cpp ./Paddle.cpp ./Pong.cpp ./Pongmain.cpp)
+set(OGREAL_INCLUDE_DIRECTORIES "/usr/local/include/OgreAL")
+set(OGREAL_LIBRARIES "/usr/local/lib/libOgreAL.so.0.0.0")
+
+include_directories(${OIS_INCLUDE_DIRS} ${OGRE_INCLUDE_DIRS} ${OGRE_SAMPLES_INCLUDEPATH} ${OGRE_Overlay_INCLUDE_DIRS} ${OGREAL_INCLUDE_DIRECTORIES})
  
 add_executable(OgrePong ${HDRS} ${SRCS})
  
 set_target_properties(OgrePong PROPERTIES DEBUG_POSTFIX _d)
  
-target_link_libraries(OgrePong ${OGRE_LIBRARIES} ${OIS_LIBRARIES} ${OGRE_Overlay_LIBRARIES})
+target_link_libraries(OgrePong ${OGRE_LIBRARIES} ${OIS_LIBRARIES} ${OGRE_Overlay_LIBRARIES} ${OGREAL_LIBRARIES})
  
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
  
-
-if(MINGW OR UNIX)
-	set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
-endif(MINGW OR UNIX)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
  
-
-if(UNIX)
- 
-	install(TARGETS OgrePong
-		RUNTIME DESTINATION bin
-		CONFIGURATIONS All)
- 
-endif(UNIX)
- 
+install(TARGETS OgrePong RUNTIME DESTINATION bin CONFIGURATIONS All)
+  

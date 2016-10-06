@@ -4,7 +4,7 @@
 #include <Ogre.h> // Ogre class definitions
 #include <OgreOverlayManager.h>
 #include <OgreOverlayElement.h>
-//#include <OgreAL.h> // OgreAL class definitions
+#include <OgreAL.h> // OgreAL class definitions
 #include <OISEvents.h> // OISEvents class definition
 #include <OISInputManager.h> // OISInputManager class definition
 #include <OISKeyboard.h> // OISKeyboard class definition

@@ -3,7 +3,7 @@
 #ifndef BALL_H
 #define BALL_H
 #include <Ogre.h> // Ogre class definitions
-//#include <OgreAL.h> // OgreAL class definitions
+#include <OgreAL.h> // OgreAL class definitions
 using namespace Ogre;
 
 class Paddle; // forward declaration of class Paddle
@@ -20,10 +20,10 @@ class Ball
     private:
 		 SceneManager *sceneManagerPtr; // pointer to the SceneManager
 		 SceneNode *nodePtr; // pointer to the SceneNode
-		 /*OgreAL::SoundManager *soundManagerPtr; // pointer to the SoundManager
+		 OgreAL::SoundManager *soundManagerPtr; // pointer to the SoundManager
 		 OgreAL::Sound *wallSoundPtr; // sound played when Ball hits a wall
 		 OgreAL::Sound *paddleSoundPtr; // sound played when Ball hits a Paddle
-		 OgreAL::Sound *scoreSoundPtr; // sound played when someone scores*/
+		 OgreAL::Sound *scoreSoundPtr; // sound played when someone scores
          int speed; // speed of the Ball
          Vector3 direction; // direction of the Ball
 

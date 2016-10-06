@@ -1,7 +1,7 @@
 // Ball.cpp
 // Ball class member-function definitions.
 #include <Ogre.h> // Ogre class definitions
-//#include <OgreAL.h> // OgreAL class definitions
+#include <OgreAL.h> // OgreAL class definitions
 #include "Ball.h" // Ball class definition
 #include "Paddle.h" // Paddle class definition
 #include "Pong.h" // Pong class definition
@@ -34,11 +34,11 @@ void Ball::addToScene()
     nodePtr->setScale(.05, .05, .05); // scale SceneNode
 
     // attach sounds to Ball so they will play from where Ball is
-     /*wallSoundPtr = soundManagerPtr -> createSound("wallSound", "wallSound.wav", false);
+     wallSoundPtr = soundManagerPtr -> createSound("wallSound", "wallSound.wav", false);
      nodePtr->attachObject(wallSoundPtr); // attach a sound to SceneNode
      paddleSoundPtr = soundManagerPtr -> createSound("paddleSound", "paddleSound.wav", false);
      nodePtr->attachObject(paddleSoundPtr); // attach sound to SceneNode
-     scoreSoundPtr = soundManagerPtr -> createSound("cheer", "cheer.wav", false); // create a Sound*/
+     scoreSoundPtr = soundManagerPtr -> createSound("cheer", "cheer.wav", false); 
   } // end function addToScene
 
 
@@ -60,7 +60,7 @@ void Ball::moveBall(Real time)
        {
          nodePtr->setPosition(0, 0, 0); // place Ball in center of screen
          Pong::updateScore(PLAYER2); // update the score
-         //scoreSoundPtr->play();  // play a sound when player 2 scores
+         scoreSoundPtr->play();  // play a sound when player 2 scores
        } // end if
 
     // check if the Ball hit the right side
@@ -68,7 +68,7 @@ void Ball::moveBall(Real time)
        {
          nodePtr->setPosition(0, 0, 0); // place Ball in center of screen
          Pong::updateScore(PLAYER1); // update the score
-         //scoreSoundPtr->play();   // play a sound when player 1 scores
+         scoreSoundPtr->play();   // play a sound when player 1 scores
        } // end else
 
     // check if the Ball hit the bottom wall
@@ -94,7 +94,7 @@ void Ball::moveBall(Real time)
 void Ball::reverseHorizontalDirection()
   {
   	direction *= Vector3(-1, 1, 1); // reverse the horizontal direction
-    //paddleSoundPtr->play(); // play the "paddleSound" sound effect
+    paddleSoundPtr->play(); // play the "paddleSound" sound effect
   } // end function reverseHorizontalDirection
 
 
@@ -102,7 +102,7 @@ void Ball::reverseHorizontalDirection()
 void Ball::reverseVerticalDirection()
   {
   	direction *= Vector3(1, -1, 1); // reverse the vertical direction
-    //wallSoundPtr->play(); // play the "wallSound" sound effect
+    wallSoundPtr->play(); // play the "wallSound" sound effect
   } // end function reverseVerticalDirection
 
 
